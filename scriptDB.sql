@@ -6,7 +6,7 @@ CREATE TABLE usuarios(
 	pass varchar(20) NOT NULL,
 	nombre varchar(80) NOT NULL,
 	cargo varchar(50) NOT NULL,
-	tipo_usuario varchar(1) NOT NULL);
+	tipo_usuario varchar(16) NOT NULL);
 
 CREATE TABLE servicios(
 	id_servicio varchar(16) PRIMARY KEY NOT NULL,

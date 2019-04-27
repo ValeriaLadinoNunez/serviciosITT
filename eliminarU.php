@@ -17,7 +17,7 @@ $id=$_REQUEST['id'];
 	?>
 		<script type="text/javascript">
 		alert ("Se ha eliminado correctamente");
-		window.location.href="eliminar_servicio.php";
+		window.location.href="eliminarUsuario.php";
 		</script>
 	<?php
 

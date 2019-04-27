@@ -15,7 +15,7 @@ $conectar=Conectarse();
 		{
 			$_SESSION['id_usuario']=$sql['id_usuario'];
 			$_SESSION['tipo_usuario']=$sql['tipo_usuario'];
-			if($sql['tipo_usuario']=='A')
+			if($sql['tipo_usuario']=='Administrador')
 			{
 				$nombreusuario='SELECT  id_usuario,nombre FROM usuarios WHERE user="'.$username.'"';
 				$consultarnombre=mysqli_query($conectar,$nombreusuario);

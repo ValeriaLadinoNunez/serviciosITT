@@ -39,8 +39,8 @@ if(($_SESSION['nombre'])!='')
 						    <div class="form-group col-md-6">
 						      <label for="tipo_usuario" style="color:#1E355E";>Tipo de usuario</label>
 						      <select id="tipo_usuario" name="tipoU" class="form-control">
-						        <option value="A">Administrador</option>
-						        <option value="C">Capturista</option>
+						        <option value="Administrador">Administrador</option>
+						        <option value="Capturista">Capturista</option>
 						      </select>
 						    </div>
 						    </div>

@@ -37,7 +37,7 @@ if(($_SESSION['nombre'])!='')
 			      <td><?php echo $row['nombre']; ?></td>
 			      <td><?php echo $row['cargo']; ?></td>
 			      <td><?php echo $row['tipo_usuario']; ?></td>
-			      <td scope="row"><a href="eliminarU.php?id=<?php echo $row['id_servicio']; ?>">Eliminar</a></td>
+			      <td scope="row"><a href="eliminarU.php?id=<?php echo $row['id_usuario']; ?>"/>Eliminar</a></td>
 			    </tr>
 			    <?php
 					}
