@@ -12,7 +12,7 @@ function registrarUser($username,$pass,$nombre,$puesto,$tipoU)
 	?>
 		<script type="text/javascript">
 		alert ("Se ha agregado correctamente");
-		window.location.href="sesion_administrador.php";
+		window.location.href="principal.php";
 		</script>
 	<?php
 }

@@ -29,7 +29,7 @@ $imge = addslashes(file_get_contents($img));*/
 	?>
 		<script type="text/javascript">
 		alert ("Se ha guardado correctamente");
-		window.location.href="sesion_administrador.php";
+		window.location.href="principal.php";
 		</script>
 	<?php
 

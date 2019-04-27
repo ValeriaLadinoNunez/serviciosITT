@@ -22,7 +22,7 @@
  		<!-- Menú -->
 			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1E355E;">
 			  <!-- Navbar content -->
-			   <a class="navbar-brand" href="sesion_administrador.php">Servicios ITT</a>
+			   <a class="navbar-brand" href="principal.php">Servicios ITT</a>
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
 					    <span class="navbar-toggler-icon"></span>
 					  </button>
@@ -33,11 +33,29 @@
 				          Registrar
 				          <span class="sr-only">(current)</span>
 				        </a>
+				        	<?php
+						 		if ($_SESSION['tipo_usuario']=='Administrador')
+						 		{
+						 	?>
 				        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 				          <a class="dropdown-item" href="registrar_usuario.php">Registrar usuario</a>
 				          <a class="dropdown-item" href="registrar_servicio.php">Registrar servicio</a>
 				        </div>
+					        <?php
+							    } else
+							    {
+					    	?>
+				    		<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+				          		<a class="dropdown-item" href="registrar_servicio.php">Registrar servicio</a>
+				        	</div>
+				    		<?php
+							    }
+							 ?>
 				      </li>
+				      			<?php
+							 		if ($_SESSION['tipo_usuario']=='Administrador')
+							 		{
+							 	?>
 				      <li class="nav-item dropdown">
 				        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				          Eliminar
@@ -48,6 +66,11 @@
 				          <a class="dropdown-item" href="eliminar_servicio.php">Eliminar servicio</a>
 				        </div>
 				      </li>
+				          <?php
+						    } else
+						    	{ }
+				    		?>
+
 				        <li class="nav-item dropdown">
 				        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				          <?php
@@ -62,4 +85,6 @@
 				    </ul>
 				  </div>
 
-			 </nav>
+			 </nav> 		
+			
+			

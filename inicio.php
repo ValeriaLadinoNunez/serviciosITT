@@ -13,26 +13,14 @@ $conectar=Conectarse();
 			$sql=mysqli_fetch_array($result);
 		if($filas==1)
 		{
-			$_SESSION['id_usuario']=$sql['id_usuario'];
+			//$_SESSION['id_usuario']=$sql['id_usuario'];
 			$_SESSION['tipo_usuario']=$sql['tipo_usuario'];
-			if($sql['tipo_usuario']=='Administrador')
-			{
 				$nombreusuario='SELECT  id_usuario,nombre FROM usuarios WHERE user="'.$username.'"';
 				$consultarnombre=mysqli_query($conectar,$nombreusuario);
 				$obtenernombre=mysqli_fetch_array($consultarnombre);
 				$_SESSION['id_usuario']=$obtenernombre['id_usuario'];
 				$_SESSION['nombre']=$obtenernombre['nombre'];
-				header("location:sesion_administrador.php");
-			}
-			else
-			{
-				$nombreusuario='SELECT  id_usuario,nombre FROM usuarios WHERE user="'.$username.'"';
-				$consultarnombre=mysqli_query($conectar,$nombreusuario);
-				$obtenernombre=mysqli_fetch_array($consultarnombre);
-				$_SESSION['id_usuario']=$obtenernombre['id_usuario'];
-				$_SESSION['nombre']=$obtenernombre['nombre'];
-				header("location:sesion_capturista.php");
-			}
+				header("location:principal.php");
 		}
 		else
 		{
