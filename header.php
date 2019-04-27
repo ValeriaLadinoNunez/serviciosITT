@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="hds.css">
     
-    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
  	</head> 
  	<body> 
  		<!--Cabecera-->
@@ -44,7 +44,7 @@
 				          <span class="sr-only">(current)</span>
 				        </a>
 				        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-				          <a class="dropdown-item" href="#">Eliminar usuario</a>
+				          <a class="dropdown-item" href="eliminarUsuario.php">Eliminar usuario</a>
 				          <a class="dropdown-item" href="eliminar_servicio.php">Eliminar servicio</a>
 				        </div>
 				      </li>

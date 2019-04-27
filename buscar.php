@@ -30,8 +30,16 @@ if(($_SESSION['nombre'])!='')
 			  <tbody>
 			  	<?php
 			  		$conectar=Conectarse();
-			  		$consulta="SELECT * FROM vision_de_servicios";
+			  		if(!(isset($_POST['buscar'])))
+			  		{
+			  			$consulta="SELECT * FROM vision_de_servicios";
 			  		$resultado=$conectar->query($consulta);
+			  		}
+			  		else{
+			  		$algo=$_POST['buscar'];
+			  		$consulta="SELECT * FROM vision_de_servicios where id_servicio='$algo' || desc_servicio like '%$algo%'";
+			  		$resultado=$conectar->query($consulta);
+			  			}
 			  		while($row=$resultado->fetch_assoc())
 			  		{
 

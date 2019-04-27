@@ -31,7 +31,7 @@ if(($_SESSION['nombre'])!='')
 				<h3>Modificar servicio</h3>
 			</div>
 			<div class="card-body">
-				<form action="guardarCambios.php" method="post" enctype="multipart/form-data">
+				<form action="guardarCambios.php?id=<?php echo $row1['id_servicio']; ?>" method="post" enctype="multipart/form-data">
 					    <div class="form-group col-md-2">
 					      <label for="id_servicio" style="color:#1E355E";>Número de folio</label>
 						      <input type="text" class="form-control" name="id_servicio" id="descservicio" 
@@ -46,9 +46,8 @@ if(($_SESSION['nombre'])!='')
 						 
 						    <div class="form-group col-md-6">
 						      <label for="dpto" style="color:#1E355E";>Departamento que lo solicita</label>
-						      <select id="dpto" name="dpto" class="form-control"
-						       value="<?php echo $row1['nombre_dpto']; ?>">
-
+						      <select id="dpto" name="dpto" class="form-control">
+						      	<option value="<?php echo $row1['nombre_dpto']; ?>"><?php echo $row1['nombre_dpto']; ?></option>
 						        <option value="Servicios escolares">Servicios escolares</option>
 						        <option value="Bioquimica">Bioquimica</option>
 						      </select>
@@ -70,8 +69,7 @@ if(($_SESSION['nombre'])!='')
 						  </div>
 						  <div class="form-group col-md-6" align="center">
 						    <label for="nombreimg" style="color:#1E355E";>Evidencia</label><br>
-						    <input type="text" name="nombreimg" placeholder="Nombre del archivo"   value="<?php echo $row2['nombre_img']; ?>"required>
-						    <input type="file" name="img" >
+						   
 						     <img src="data:image/jpg;base64,<?php echo base64_encode($row2['img']); ?>" width="80%"/>
 
 						  </div>
