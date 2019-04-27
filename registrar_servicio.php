@@ -47,7 +47,7 @@ if(($_SESSION['nombre'])!='')
 						  <div class="form-group col-md-6">
 						    <label for="fechaInicio" style="color:#1E355E";>Fecha de solicitud</label><br>
 						      <input type="date" name="fechaInicio" min="2000-01-01"
-                                  max="2019-12-31" required>
+                                  max="2050-12-31" required>
 						  </div>
 						  <div class="form-group col-md-6" align="center">
 						    <label for="nombreimg" style="color:#1E355E";>Evidencia</label><br>
@@ -57,7 +57,7 @@ if(($_SESSION['nombre'])!='')
 						  <div class="form-group col-md-6">
 						    <label for="fechaFinal" style="color:#1E355E";>Fecha de realización</label><br>
 						    <input type="date" name="fechaFinal" min="2000-01-01"
-                                  max="2019-12-31" >
+                                  max="2050-12-31" >
 						  </div>
 						  
 						</div>
