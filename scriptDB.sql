@@ -21,11 +21,26 @@ CREATE TABLE servicios(
 	nombre_img varchar(30),
 	img longblob);
 
+CREATE TABLE meses(
+id_mes int  PRIMARY key NOT NULL,
+mes varchar(20) not null);
+
 alter table servicios add foreign key(id_user) references usuarios(id_usuario);
 
 insert INTO usuarios VALUES('','admin','passw0rd','Valeria','Desarrolladora','Administrador'); 
-
+insert INTO meses values('01','ENERO'),
+	('02','FEBRERO'),
+	('03','MARZO'),
+	('04','ABRIL'),
+	('05','MAYO'),
+	('06','JUNIO'),
+	('07','JULIO'),
+	('08','AGOSTO'),
+	('09', 'SEPTIEMBRE'),
+	('10','OCTUBRE'),
+	('11','NOVIEMBRE'),
+	('12','DICIEMBRE');
 CREATE VIEW vision_de_servicios AS 
-SELECT id_servicio,desc_servicio,fecha_solicitud, if(fecha_realizacion='0000-00-00','Pendiente',fecha_realizacion) as FechaFinal,img 
+SELECT id_servicio,desc_servicio,fecha_solicitud, if(fecha_realizacion='0000-00-00','Pendiente',fecha_realizacion) as FechaFinal,nombre_responsable, img 
 FROM servicios;
 

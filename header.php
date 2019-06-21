@@ -52,6 +52,23 @@
 							    }
 							 ?>
 				      </li>
+					      <?php
+								 		if ($_SESSION['tipo_usuario']=='Administrador')
+								 		{
+								 	?>
+					      <li class="nav-item dropdown">
+					        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					          Reportes
+					          <span class="sr-only">(current)</span>
+					        </a>
+					        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					          <a class="dropdown-item" href="reportes.php">Generar reporte por mes</a>
+					        </div>
+					      </li>
+					          <?php
+							    } else
+							    	{ }
+					    		?>
 				      			<?php
 							 		if ($_SESSION['tipo_usuario']=='Administrador')
 							 		{
