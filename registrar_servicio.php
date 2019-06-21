@@ -17,10 +17,10 @@ if(($_SESSION['nombre'])!='')
 			</div>
 			<div class="card-body">
 				<form action="registrarS.php" method="post" enctype="multipart/form-data">
-					    <div class="form-group col-md-2">
+					   <!-- <div class="form-group col-md-2">
 					      <label for="id_servicio" style="color:#1E355E";>Número de folio</label>
 						      <input type="text" class="form-control" name="id_servicio" id="descservicio" placeholder="0000001" required>
-						    </div>
+						    </div>-->
 					<div class="form-row">
 					    <div class="form-group col-md-6">
 					      <label for="descservicio" style="color:#1E355E";>Descripcion de servicio</label>
@@ -59,6 +59,11 @@ if(($_SESSION['nombre'])!='')
 						    <input type="date" name="fechaFinal" min="2000-01-01"
                                   max="2050-12-31" >
 						  </div>
+
+					    <div class="form-group col-md-6">
+					      <label for="obs_servicio" style="color:#1E355E";>Observaciones</label>
+						      <input type="text" class="form-control" name="obs_servicio" id="obs_servicio" >
+						    </div>
 						  
 						</div>
 					<div class="form-group">

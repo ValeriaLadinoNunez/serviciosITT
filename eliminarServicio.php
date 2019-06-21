@@ -8,8 +8,6 @@ $id_serv=$_REQUEST['id'];
 
 	$conectar=Conectarse();
 
-	$eliminarimg='DELETE FROM imagenes where id_servicio="'.$id_serv.'"';
-	$eliminarimg=mysqli_query($conectar,$eliminarimg) or die(mysqli_error($conectar));
 
 	$eliminarS='DELETE FROM servicios where id_servicio="'.$id_serv.'"';
 	$resultS=mysqli_query($conectar,$eliminarS) or die(mysqli_error($conectar));

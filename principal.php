@@ -42,7 +42,7 @@ if(($_SESSION['nombre'])!='')
 			      <td><?php echo $row['fecha_solicitud']; ?></td>
 			      <td><?php echo $row['FechaFinal']; ?></td>
 			      <td align="center" ><img src="data:image/jpg;base64,<?php echo base64_encode($row['img']); ?>" width="20%"/></td>
-			      <th scope="row"><a href="detalles.php?id=<?php echo $row['id_servicio']; ?>">Detalles</a></th>
+			      <th scope="row"><a href="detalles.php?id=<?php echo $row['id_servicio']; ?>"><i class="fa fa-pencil"></i>Detalles</a></th>
 			      <?php
 			      if ($_SESSION['tipo_usuario']!='Administrador')
 						 		{} else {
