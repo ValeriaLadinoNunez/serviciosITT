@@ -9,22 +9,18 @@ if(($_SESSION['nombre'])!='')
 			 <br>
 					 
 					    <form class="form-inline" action="buscarmes.php" method="post">
-					    	<label for="mes" style="color:#1E355E";>Seleccione un mes  &nbsp;&nbsp;&nbsp;&nbsp;</label>
-			 				<?php
-						  		$conectar=Conectarse();
-						  		$consult="SELECT * FROM meses";
-						  		$result=$conectar->query($consult);
-						  	?>
-
-						      <select id="mes" name="mes" class="form-control">
-						      <?php	while($row2=$result->fetch_assoc())
-						  		{
-						  			?>
-						        <option value="<?php echo $row2['id_mes']; ?>"><?php echo $row2['mes'];?> &nbsp;&nbsp;</option>
-						        <?php } ?>
-						      </select>
+					    	<div class="input-group form-group">
+						    <div class="form-group col-md-6">
+						    <label for="fechainicial" style="color:#1E355E";>Seleccione una fecha inicial &nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+						    <input type="date" name="fechaInicial" min="2000-01-01"
+                                  max="2050-12-31"  required>
+                                     <label for="fechaFinal" style="color:#1E355E";>Seleccione una fecha límite &nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+						    <input type="date" name="fechaFinal" min="2000-01-01"
+                                  max="2050-12-31" required>
+						  </div>
  	    
 						    <button class="btn btn-primary" type="submit">Mostrar</button>
+						</div>
 					  </form>
 
 			  
@@ -34,3 +30,5 @@ include("footer.php");
 else 
 header("location: login.php");
 ?>
+
+					    

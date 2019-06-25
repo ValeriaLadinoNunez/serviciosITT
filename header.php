@@ -91,12 +91,24 @@
 				        <li class="nav-item dropdown">
 				        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				          <?php
-				            echo $_SESSION['nombre'];
+				          		$id=$_SESSION['id_usuario'];
+				            	echo $_SESSION['nombre'];
 				          ?>
 				          <span class="sr-only">(current)</span>
 				        </a>
 				        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 				          <a class="dropdown-item" href="cerrar_sesion.php">Cerrar Sesión</a>
+				           <a class="dropdown-item" href="cambiarcontrasena.php">Cambiar contraseña</a>
+				           <?php
+							 		if ($_SESSION['tipo_usuario']=='Administrador')
+							 		{
+							 	?>
+									<a class="dropdown-item" href="registrousuarios.php">Registro de usuarios</a>
+								  <?php
+						    } else
+						    	{ }
+				    		?>
+ 
 				        </div>
 				      </li>
 				    </ul>

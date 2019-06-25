@@ -2,8 +2,9 @@
 header('Content-type:application/xls');
 header('Content-Disposition: attachment; filename=reporte de servicios.xls');
 include("conexion.php");
- 		 $link=Conectarse(); 
- 		 $mes=$_REQUEST['id'];
+ 		// $link=Conectarse(); 
+ 		 $fi=$_GET['fi'];
+ 		 $ff=$_GET['ff'];
  		 
 ?>
 	 		<table BORDER=2 CELLSPACING=1 CELLPADDING=1> 
@@ -19,7 +20,7 @@ include("conexion.php");
 
 	 		<?php
 			  		$conectar=Conectarse();
-			  		$consulta="SELECT id_servicio,desc_servicio,fecha_solicitud, if(fecha_realizacion='0000-00-00','Pendiente',fecha_realizacion) as FechaFinal,nombre_responsable FROM servicios where month(fecha_realizacion)='$mes'";
+			  		$consulta="SELECT id_servicio,desc_servicio,fecha_solicitud, if(fecha_realizacion='0000-00-00','Pendiente',fecha_realizacion) as FechaFinal,nombre_responsable FROM servicios where fecha_realizacion between '$fi' and '$ff'";
 			  		$resultado=$conectar->query($consulta);
 			  		while($row=$resultado->fetch_assoc())
 			  		{

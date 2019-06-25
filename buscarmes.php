@@ -4,32 +4,27 @@ include("conexion.php");
 if(($_SESSION['nombre'])!='')
 {
 	include("header.php");
-$mes=$_POST['mes'];
+$fechaI=$_POST['fechaInicial'];
+$fechaF=$_POST['fechaFinal'];
 ?>
 			 <br>
 					 
 					    <form class="form-inline" action="buscarmes.php" method="post">
-					    	<label for="mes" style="color:#1E355E";>Seleccione un mes  &nbsp;&nbsp;&nbsp;&nbsp;</label>
-			 				<?php
-						  		$conectar=Conectarse();
-						  		$consult="SELECT * FROM meses";
-						  		$result=$conectar->query($consult);
-						  	?>
-
-						      <select id="mes" name="mes" class="form-control">
-						      	<option value="<?php echo $mes; ?>"></option>
-						      <?php	while($row2=$result->fetch_assoc())
-						  		{
-						  			?>
-						  		
-						        <option value="<?php echo $row2['id_mes']; ?>"><?php echo $row2['mes'];?>&nbsp;&nbsp; </option>
-						        <?php } ?>
-						      </select>
+					    	<div class="input-group form-group">
+						    <div class="form-group col-md-6">
+						    <label for="fechainicial" style="color:#1E355E";>Seleccione una fecha inicial &nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+						    <input type="date" name="fechaInicial" min="2000-01-01"
+                                  max="2050-12-31" required>
+                                     <label for="fechaFinal" style="color:#1E355E";>Seleccione una fecha límite &nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+						    <input type="date" name="fechaFinal" min="2000-01-01"
+                                  max="2050-12-31" required>
+						  </div>
  	    
 						    <button class="btn btn-primary" type="submit">Mostrar</button>
+						</div>
 					  </form>
 					  <div class="contenedor">
- 			<a href="excel.php?id=<?php echo $mes; ?>">Generar archivo de EXCEL</a>
+ 			<a href="excel.php?fi=<?php echo $fechaI; ?>&ff=<?php echo $fechaF; ?>">Generar archivo de EXCEL</a>
  		 <center>
 	 		<table class="table table-hover" border="2">
 			  <thead>
@@ -46,7 +41,7 @@ $mes=$_POST['mes'];
 			  	<?php
 			  		//$mes=$_POST['mes'];
 			  		$conectar=Conectarse();
-			  		$consulta="SELECT id_servicio,desc_servicio,fecha_solicitud, if(fecha_realizacion='0000-00-00','Pendiente',fecha_realizacion) as FechaFinal,nombre_responsable, img FROM servicios where month(fecha_realizacion)='$mes'";
+			  		$consulta="SELECT id_servicio,desc_servicio,fecha_solicitud, if(fecha_realizacion='0000-00-00','Pendiente',fecha_realizacion) as FechaFinal,nombre_responsable, img FROM servicios where fecha_realizacion between '$fechaI' and '$fechaF'";
 			  		$resultado=$conectar->query($consulta);
 			  		while($row=$resultado->fetch_assoc())
 			  		{
