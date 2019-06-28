@@ -5,6 +5,10 @@ if(($_SESSION['nombre'])!='')
 
 {
 	include("header.php");
+				  	$conectar=Conectarse();
+			  		$consulta="SELECT * FROM departamentos";
+			  		$resultado=$conectar->query($consulta);
+			  		
 ?>
  		<div class="contenedor">
 
@@ -17,10 +21,6 @@ if(($_SESSION['nombre'])!='')
 			</div>
 			<div class="card-body">
 				<form action="registrarS.php" method="post" enctype="multipart/form-data">
-					   <!-- <div class="form-group col-md-2">
-					      <label for="id_servicio" style="color:#1E355E";>Número de folio</label>
-						      <input type="text" class="form-control" name="id_servicio" id="descservicio" placeholder="0000001" required>
-						    </div>-->
 					<div class="form-row">
 					    <div class="form-group col-md-6">
 					      <label for="descservicio" style="color:#1E355E";>Descripcion de servicio</label>
@@ -30,9 +30,14 @@ if(($_SESSION['nombre'])!='')
 						    <div class="form-group col-md-6">
 						      <label for="dpto" style="color:#1E355E";>Departamento que lo solicita</label>
 						      <select id="dpto" name="dpto" class="form-control">
-						        <option value="Servicios escolares">Servicios escolares</option>
-						        <option value="Bioquimica">Bioquimica</option>
-						      </select>
+						      	<?php
+						      		while ($row=$resultado->fetch_assoc()) {
+						      			
+						      		
+						      	?>
+								<option value="<?php echo $row['departamento']; ?>"><?php echo $row['departamento']; ?></option>	
+							<?php } ?>
+								</select>
 						    </div>
 						  </div>
 						 <div class="input-group form-group">
@@ -71,14 +76,6 @@ if(($_SESSION['nombre'])!='')
 					</div>
 
 				</form>
-			</div>
-			<div class="card-footer">
-				<!--<div class="d-flex justify-content-center links">
-					Don't have an account?<a href="#">Sign Up</a>
-				</div>
-				<div class="d-flex justify-content-center">
-					<a href="#">Forgot your password?</a>
-				</div>-->
 			</div>
 		</div>
 	</div>

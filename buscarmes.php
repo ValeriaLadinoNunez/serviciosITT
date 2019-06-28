@@ -24,6 +24,15 @@ $fechaF=$_POST['fechaFinal'];
 						</div>
 					  </form>
 					  <div class="contenedor">
+					  	<?php 
+					  		$conectar=Conectarse();
+					  		$consulta="SELECT id_servicio,desc_servicio,fecha_solicitud, if(fecha_realizacion='0000-00-00','Pendiente',fecha_realizacion) as FechaFinal,nombre_responsable, img FROM servicios where fecha_realizacion between '$fechaI' and '$fechaF'";
+					  		$resultado=$conectar->query($consulta);
+					  		$numero_filas = mysqli_num_rows($resultado);
+					  		if ($numero_filas!=0) {
+					  		
+					  		
+					  	?>
  			<a href="excel.php?fi=<?php echo $fechaI; ?>&ff=<?php echo $fechaF; ?>">Generar archivo de EXCEL</a>
  		 <center>
 	 		<table class="table table-hover" border="2">
@@ -39,10 +48,7 @@ $fechaF=$_POST['fechaFinal'];
 			  </thead>
 			  <tbody>
 			  	<?php
-			  		//$mes=$_POST['mes'];
-			  		$conectar=Conectarse();
-			  		$consulta="SELECT id_servicio,desc_servicio,fecha_solicitud, if(fecha_realizacion='0000-00-00','Pendiente',fecha_realizacion) as FechaFinal,nombre_responsable, img FROM servicios where fecha_realizacion between '$fechaI' and '$fechaF'";
-			  		$resultado=$conectar->query($consulta);
+
 			  		while($row=$resultado->fetch_assoc())
 			  		{
 
@@ -57,6 +63,9 @@ $fechaF=$_POST['fechaFinal'];
 			    </tr>
 			    <?php
 					}
+				}
+				else { echo "No se encontraron resultados  ";}
+
 				?>
 			  </tbody>
 			</table>

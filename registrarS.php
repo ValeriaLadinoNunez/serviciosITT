@@ -1,8 +1,7 @@
 <?php
 session_start();
 include("conexion.php");
-//registrarServicio($_POST['id_servicio'],$_POST['pass'],$_POST['nombre'],$_POST['puesto'],$_POST['tipoU']);
-//$id_servicio=$_POST['id_servicio'];
+
 $dpto=$_POST['dpto'];
 $descservicio=$_POST['descservicio'];
 $id_user=$_SESSION['id_usuario'];

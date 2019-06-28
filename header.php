@@ -40,6 +40,7 @@
 				        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 				          <a class="dropdown-item" href="registrar_usuario.php">Registrar usuario</a>
 				          <a class="dropdown-item" href="registrar_servicio.php">Registrar servicio</a>
+				           <a class="dropdown-item" href="agregardepartamento.php">Registrar departamento</a>
 				        </div>
 					        <?php
 							    } else

@@ -7,6 +7,7 @@ if(($_SESSION['nombre'])!='')
 
 ?>
 			 <br>
+			  <label>LOS RESUSTADOS SE MUESTRARAN DE ACUERDO A LA FECHA DE REALIZACIÓN DEL SERVICIO</label>
 					 
 					    <form class="form-inline" action="buscarmes.php" method="post">
 					    	<div class="input-group form-group">
@@ -22,6 +23,7 @@ if(($_SESSION['nombre'])!='')
 						    <button class="btn btn-primary" type="submit">Mostrar</button>
 						</div>
 					  </form>
+
 
 			  
 <?php
